@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link defer rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script language="javascript" type="text/javascript" src="script.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- col-XS FA IL .PACK() -->
+    <!-- col-XS FA IL .PACK() -->
+    <!-- col-XS FA IL .PACK() -->
+    <div class="container">
+        <div class="row">
+
+            <!-- ACCEDI -->
+            <div class="col-sm" style="background-color:rgb(156, 148, 196)">
+                <fieldset>
+                    <legend>Accedi a:</legend>
+                    <div class="input-group mt-2 mb-2">
+                        <input type="text" class="form-control" id="mail2login" value="aleprezio621@gmail.com">
+                    </div>
+                    <div class="input-group mt-2 mb-2">
+                        <input type="password" class="form-control" id="pass2login" placeholder="codice di accesso">
+                    </div>
+
+                    <input class="btn btn-dark" type="button" value="accedi" id="accedi">
+                </fieldset>
+            </div>
+
+            <!-- AGGIUNGI -->
+            <div class="col-md" style="background-color:coral">
+                <fieldset>
+                    <legend>aggiungi utente:</legend>
+                    <div class="input-group mt-2 mb-2">
+                        <input type="text" class="form-control" name="nomefile" id="nome" placeholder="nome soggetto">
+                    </div>
+                    <div class="input-group mt-2 mb-2">
+                        <input type="text" class="form-control" name="texttoadd" id="addPosta"
+                            placeholder="mail soggetto">
+                    </div>
+
+                    <input class="btn btn-dark" type="button" value="add" id="submitAdd">
+                </fieldset>
+            </div>
+
+            <!-- TUTTI -->
+            <div class="col-xs" style="background-color:cornflowerblue">
+                <fieldset style="padding: 0px 15px 0px 15px">
+                    <legend>tutti:</legend>
+                    <input class="btn btn-dark" type="button" value="elenca tutti" id="submitAll">
+                </fieldset>
+            </div>
+
+            <!-- CERCA -->
+            <div class="col-md" style="background-color:crimson">
+                <fieldset>
+                    <legend>cerca:</legend>
+                    <div class="input-group mt-2 mb-2">
+                        <input type="text" class="form-control" name="tosearch" id="daCercare" placeholder="nome">
+                    </div>
+
+                    <input class="btn btn-dark" type="button" value="cerca" id="submitCerca">
+                </fieldset>
+            </div>
+
+            <!-- SCRIVERE -->
+            <div class="col-md" style="background-color:darkcyan">
+                <fieldset style="padding: 0px 15px 15px 15px">
+                    <legend>Cosa vuoi scrivere?:</legend>
+                    <div class="form-group">
+                        <label for="out">Oggetto Testo:</label>
+                        <textarea class="form-control" rows="1" id="oggettoEmail"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="out">Corpo Testo:</label>
+                        <textarea class="form-control" rows="5" id="output"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="out" onclick="$('#aScomparsa').toggle(300);">Rispondi Rapidamante</label>
+                        <div id="aScomparsa">
+                            <input class="btn btn-dark" type="button" id="risp1" value="Ho capito. Grazie ancora.">
+                            <input class="btn btn-dark" type="button" id="risp2"
+                                value="Vedo di farlo appena posso. Saluti">
+                            <input class="btn btn-dark" type="button" id="risp3" value="Sì va bene così.">
+                        </div>
+                    </div>
+
+                    <iframe style="display: none" id="dummyiframe" src="tjrj" width="0" height="0"></iframe>
+                    <form id="hiddForm" action='/send' method='post' encType="multipart/form-data">
+                        allegato: <input type="file" name="photo">
+                        <input style="display: none" type="text" name="arrSerializzato" value="">
+                        <input style="display: none" type="text" name="subject" value="">
+                        <input style="display: none" type="text" name="messaggio" value="">
+                    </form>
+                    <br>
+                    <input class="btn btn-dark" type="button" onclick="send()" value="manda Email ai selezionati">
+
+                </fieldset>
+            </div>
+
+        </div>
+
+        <!-- 
+        <form ref='uploadForm' id='uploadForm' action='/upload' method='post' encType="multipart/form-data">
+            <input type="text" name="nonphoto1">
+            <input type="file" name="photo" id="ciao">
+            <input type="text" name="nonphoto">
+            <input type="submit" value="go">
+        </form> -->
+
+
+</body>
+
+<div class="row" id="fillMe">
+    <!-- riempita dal JS di card-->
+</div>
+
+</div>
+</body>
+
+</html>
